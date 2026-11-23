@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+﻿# Charlie Travels & Cargo
 
-## Getting Started
+Responsive bus travel and parcel delivery website built with Next.js App Router, TypeScript, React and Bootstrap.
 
-First, run the development server:
+## Local development
 
-```bash
+```sh
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open the Local URL printed by Next.js (normally http://localhost:3000).
+Copy `.env.example` to `.env.local` when overriding the deployment domain. Environment files stay at the repository root.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```text
+src/
+  app/                 Routes, root layout, metadata, robots and sitemap
+  components/
+    layout/            Common header and footer
+    ui/                Shared section headings and booking buttons
+    home/              Home cards, enquiry form, routes and gallery
+  data/                Home content and navigation definitions
+  lib/                 Booking URL helpers and site URL configuration
+  styles/              Global/layout styles and home page styles
+public/                Logo, optimized images and video
+```
 
-## Learn More
+Keep `public/`, `.env.*`, package files and framework/tool configuration at the repository root. All application imports use `@/`, which resolves to `src/`.
 
-To learn more about Next.js, take a look at the following resources:
+## Working conventions
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Route files belong in `src/app`. Shared layouts belong in `components/layout`, reusable presentation components in `components/ui`, and home-specific components in `components/home`.
+- Update repeated content in `src/data/home.ts` and navigation in `src/data/navigation.ts`.
+- Build WhatsApp links through `src/lib/booking.ts`; do not duplicate the booking number in components.
+- Prefer Server Components. Use `"use client"` only for components that need events, state or browser APIs.
+- Keep strict TypeScript checks enabled. Use `import type` for types.
+- The existing enquiry form keeps passenger travel, parcel delivery and cargo shipping options. Submitting opens WhatsApp with the enquiry details; sending remains the visitor's action.
+- `NEXT_PUBLIC_SITE_URL` controls canonical URLs, social image URLs and the sitemap. Set it to the actual deployment origin before publishing on a different domain.
+- Sitemap entries should include only implemented routes.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Validation
 
-## Deploy on Vercel
+```sh
+npm run format       # Apply consistent formatting
+npm run check        # Formatting, ESLint and TypeScript
+npm run build        # Production compilation and route generation
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+There is no automated browser test suite yet. Check the desktop/mobile layout and booking flow when changing UI behavior.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Next.js version guidance
+
+Read relevant guides in `node_modules/next/dist/docs/` before changing framework behavior; this project's Next.js version includes changes from earlier versions.
