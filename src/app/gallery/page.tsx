@@ -19,6 +19,8 @@ export const metadata: Metadata = {
   description,
   alternates: { canonical: "/gallery" },
   openGraph: {
+    locale: "en_IN",
+    siteName: "Charlie Travels & Cargo",
     title: "Gallery & Stories | Charlie Travels & Cargo",
     description,
     url: "/gallery",

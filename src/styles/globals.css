@@ -1054,3 +1054,31 @@ body {
     transition: none;
   }
 }
+
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  transform: translateY(-180%);
+  z-index: 9999;
+  background: #fff;
+  color: #081b35;
+  padding: 12px 20px;
+  border-radius: 8px;
+}
+.skip-link:focus {
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+  main :is(.service-card, .testimonial-card, .pricing-card) {
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+  main :is(.service-card, .testimonial-card, .pricing-card):hover {
+    transform: translateY(-5px);
+  }
+}

@@ -56,7 +56,7 @@ export default function AnimateIn({
   }, [delay, stagger]);
 
   return (
-    <div ref={ref} className={className}>
+    <div ref={ref} className={className} data-animate-in>
       {children}
     </div>
   );
