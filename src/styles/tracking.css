@@ -1,0 +1,339 @@
+.tracking-page {
+  --tracking-navy: #0b203a;
+  --tracking-red: #c22d23;
+}
+.tracking-hero {
+  min-height: 485px;
+  display: flex;
+  align-items: center;
+  isolation: isolate;
+  position: relative;
+  overflow: hidden;
+  background: var(--tracking-navy);
+  color: #fff;
+}
+.tracking-hero > img {
+  object-fit: cover;
+  z-index: -2;
+  object-position: center;
+}
+.tracking-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #081b35f5 5%, #081b35d9 52%, #081b3561);
+  z-index: -1;
+}
+.tracking-hero-content {
+  padding-block: 46px 58px;
+}
+.tracking-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 11px;
+  color: #c4d1de;
+  font-size: 14px;
+  margin-bottom: 47px;
+}
+.tracking-breadcrumb a {
+  color: #fff;
+}
+.tracking-hero .section-eyebrow {
+  color: #f2c179;
+}
+.tracking-hero h1 {
+  font-size: clamp(38px, 5vw, 66px);
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -2px;
+  margin: 17px 0 22px;
+}
+.tracking-hero h1 em {
+  color: #f2c179;
+  font-style: normal;
+}
+.tracking-hero p {
+  max-width: 615px;
+  color: #d0dbe7;
+  font-size: 18px;
+  line-height: 1.8;
+  margin: 0;
+}
+.tracking-main {
+  background: #f4f6f8;
+  padding: 0 0 66px;
+}
+.tracking-card {
+  display: grid;
+  grid-template-columns: 1fr 1.02fr;
+  gap: 55px;
+  background: #fff;
+  border-radius: 17px;
+  border: 1px solid #e3e8ee;
+  box-shadow: 0 16px 35px #0b203a0d;
+  padding: 48px;
+  transform: translateY(-55px);
+  margin-bottom: -27px;
+}
+.tracking-card-copy h2 {
+  color: #0b2341;
+  font-size: clamp(27px, 3vw, 38px);
+  font-weight: 700;
+  letter-spacing: -1px;
+  margin: 13px 0 15px;
+}
+.tracking-card-copy > p {
+  color: #657285;
+  font-size: 16px;
+  line-height: 1.8;
+  margin: 0;
+}
+.tracking-card-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  padding-top: 21px;
+  margin-top: 23px;
+  border-top: 1px solid #e5eaf0;
+  color: #657285;
+  font-size: 13px;
+  line-height: 1.65;
+}
+.tracking-card-note i {
+  color: #c22d23;
+  font-size: 18px;
+}
+.tracking-form {
+  align-self: center;
+}
+.tracking-form > label {
+  display: block;
+  color: #203952;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 9px;
+}
+.tracking-input-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 60px;
+  padding: 0 17px;
+  border: 1px solid #d6dfe9;
+  border-radius: 8px;
+  background: #f9fafc;
+  color: #aeb9c7;
+}
+.tracking-input-row:focus-within {
+  outline: 3px solid #c22d2320;
+  background: #fff;
+  border-color: #c22d23;
+}
+.tracking-input-row i {
+  font-size: 20px;
+}
+.tracking-input-row input {
+  min-width: 0;
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font-size: 16px;
+  color: #10243d;
+}
+.tracking-form .home-button {
+  width: 100%;
+  margin-top: 16px;
+}
+.tracking-form > p {
+  margin: 13px 0 0;
+  color: #718095;
+  font-size: 12px;
+  line-height: 1.65;
+}
+.tracking-form .tracking-error {
+  min-height: 18px;
+  color: #b62e24;
+  font-weight: 600;
+  margin-top: 6px;
+}
+.tracking-assurance {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 21px 43px;
+  color: #53667d;
+  font-size: 13px;
+}
+.tracking-assurance span {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+}
+.tracking-assurance i {
+  color: #c22d23;
+  font-size: 18px;
+}
+.tracking-how {
+  padding-block: 92px;
+}
+.tracking-heading {
+  max-width: 700px;
+  text-align: center;
+  margin-inline: auto;
+}
+.tracking-heading h2 {
+  color: #0b2341;
+  font-size: clamp(27px, 3.2vw, 41px);
+  letter-spacing: -1px;
+  font-weight: 700;
+  margin: 12px 0 15px;
+}
+.tracking-heading p {
+  color: #657285;
+  margin: 0;
+}
+.tracking-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 26px;
+  margin-top: 45px;
+}
+.tracking-steps article {
+  border: 1px solid #e2e7ed;
+  border-radius: 14px;
+  padding: 30px;
+  position: relative;
+  background: #fff;
+}
+.tracking-step-number {
+  position: absolute;
+  top: 23px;
+  right: 24px;
+  color: #d5dde7;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.tracking-steps article > i {
+  display: grid;
+  place-items: center;
+  width: 49px;
+  height: 49px;
+  border-radius: 12px;
+  background: #fff0ed;
+  color: #c22d23;
+  font-size: 23px;
+}
+.tracking-steps h3 {
+  color: #0b2341;
+  font-size: 21px;
+  line-height: 1.3;
+  font-weight: 700;
+  margin: 23px 0 11px;
+}
+.tracking-steps p {
+  color: #657285;
+  font-size: 14px;
+  line-height: 1.75;
+  margin: 0;
+}
+.tracking-support {
+  background: #0b203a;
+  color: #fff;
+  overflow: hidden;
+  position: relative;
+}
+.tracking-support::after {
+  content: "";
+  width: 440px;
+  height: 440px;
+  border-radius: 50%;
+  border: 70px solid #ffffff04;
+  position: absolute;
+  top: -250px;
+  right: -50px;
+}
+.tracking-support-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 36px;
+  position: relative;
+  z-index: 1;
+  padding-block: 58px;
+}
+.tracking-support .section-eyebrow {
+  color: #efb973;
+}
+.tracking-support h2 {
+  font-size: clamp(26px, 3vw, 38px);
+  font-weight: 700;
+  letter-spacing: -1px;
+  margin: 14px 0 12px;
+}
+.tracking-support p {
+  color: #b8c7d8;
+  max-width: 680px;
+  margin: 0;
+}
+.tracking-support .home-button {
+  flex-shrink: 0;
+}
+@media (max-width: 850px) {
+  .tracking-card {
+    gap: 30px;
+    padding: 35px;
+  }
+  .tracking-steps {
+    gap: 16px;
+  }
+  .tracking-steps article {
+    padding: 25px;
+  }
+}
+@media (max-width: 700px) {
+  .tracking-hero {
+    min-height: 455px;
+  }
+  .tracking-hero h1 {
+    letter-spacing: -1.2px;
+  }
+  .tracking-breadcrumb {
+    margin-bottom: 33px;
+  }
+  .tracking-main {
+    padding-bottom: 47px;
+  }
+  .tracking-card {
+    grid-template-columns: 1fr;
+    transform: translateY(-36px);
+    margin-bottom: -10px;
+    padding: 29px 24px;
+  }
+  .tracking-assurance {
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .tracking-how {
+    padding-block: 60px;
+  }
+  .tracking-steps {
+    grid-template-columns: 1fr;
+    margin-top: 32px;
+  }
+  .tracking-support-inner {
+    align-items: flex-start;
+    flex-direction: column;
+    padding-block: 43px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tracking-page *,
+  .tracking-page *::before,
+  .tracking-page *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

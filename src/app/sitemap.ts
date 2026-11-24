@@ -4,6 +4,8 @@ import { blogPosts } from "@/data/blog";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
+    { url: new URL("/tracking", siteUrl).href, changeFrequency: "monthly", priority: 0.8 },
+    { url: new URL("/privacy-policy", siteUrl).href, changeFrequency: "yearly", priority: 0.4 },
     { url: new URL("/blogs", siteUrl).href, changeFrequency: "weekly", priority: 0.8 },
     ...blogPosts.map((post) => ({
       url: new URL(`/blogs/${post.slug}`, siteUrl).href,
